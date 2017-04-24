@@ -4,6 +4,6 @@
 class AdminPanelController{
     
     public function actionindex(){
-        echo 'actionAdminpanel';
+        echo 'Админская панель';
     }
 }

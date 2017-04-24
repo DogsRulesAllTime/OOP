@@ -1,8 +1,8 @@
 <?php
 
 return array(
-    'userpanel' =>  'userpanel/index',
-    'adminpanel' =>  'adminpanel/index',
+    'upanel' =>  'userpanel/index',
+    'apanel' =>  'adminpanel/index',
     'zapiska' =>  'zapiska/index',
     'login' =>  'login/index',
 );
