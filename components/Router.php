@@ -21,22 +21,34 @@ class Router {
     }
     
     public function run() {
+
         $uri = $this->getURI();
-//            echo $uri;
+           // echo $uri;
             
             
             foreach ($this->routes as $uriPattern => $path){
                           
             
             if (preg_match("~$uriPattern~", $uri)){
-                $segments = explode('/', $path);
+
+
+                $internalRoute = preg_replace("~$uriPattern~", $path, $uri);
+
+
+                $segments = explode('/', $internalRoute);
                
                 $controllerName = array_shift($segments).'Controller';
                 $controllerName = ucfirst($controllerName);
                 
                 $actionName = 'action'.ucfirst(array_shift($segments));
-//                echo '<br> class  '.$controllerName;
-//                echo '<br> method  '.$actionName;
+               // echo '<br> class  '.$controllerName;
+               // echo '<br> method  '.$actionName;
+
+                $parameters = $segments;
+                // echo '<pre>';
+                // print_r($parameters);
+
+                // die();
             
             
             $controllerFile = ROOT .'/controllers/'.$controllerName.'.php';
@@ -45,7 +57,7 @@ class Router {
             }
             
             $controllerObject = new $controllerName;
-            $result = $controllerObject->$actionName();
+            $result = call_user_func_array(array($controllerObject,$actionName ),$parameters);
             if($result != null){
                 break;
             }
