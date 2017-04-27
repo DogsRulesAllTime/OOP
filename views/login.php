@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="template/css/style.css">
 </head>
 <body>
+<a class="btn" href="/register">Home</a>
     <div class="form">
 <form class="form-horizontal" action="" role="form" method="POST">
   <div class="form-group">
