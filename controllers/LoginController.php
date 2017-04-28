@@ -6,9 +6,10 @@ class LoginController{
     public function actionIndex(){
         echo 'Авторизация';
         require_once (ROOT . '/models/login.php');
-        $a = Admin::checkLogin();
-        print_r($a);
         
+        $b = Admin::checkDostup();
+        
+        print_r($b);
         require_once (ROOT . '/views/login.php');
         
         
