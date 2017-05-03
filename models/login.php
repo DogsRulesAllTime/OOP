@@ -23,6 +23,7 @@ class Admin
 //         $row_cnt = $result->num_rows;
                   if(empty($item)){
                       echo "wrong";
+                      unset($_POST);
                   }else{
 
                       echo "succes";
@@ -52,10 +53,14 @@ $db = Db::getConnection();
         $item = $result->fetch();
          if(empty($item)){
                       echo "wrong";
+                      unset($_POST);
                   }else{
 
                       echo "succes";
+
                       return $item;
+                      
+                      
                   }
     endif;
           

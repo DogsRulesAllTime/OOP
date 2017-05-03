@@ -47,7 +47,7 @@
       <td><?php echo $a['name']?></td>
       <td><?php echo $a['number']?></td>
       <td><?php echo $a['otd']?></td>
-      <td><a href="apanel/<?php echo $a['id']?>">Подробнее</a></td>
+      <td><a href="/apanel/<?php echo $a['id']?>">Подробнее</a></td>
     </tr>
       <?php endforeach; ?>
     </table>
