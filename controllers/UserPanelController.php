@@ -7,7 +7,13 @@ class UserPanelController{
     public function actionIndex(){
     	
         echo 'Юзерская  панель';
+        require_once (ROOT . '/models/user.php');
+     	$last = User::getLast();
+
         require_once (ROOT . '/views/upanel.php');
+        // echo '<pre>';
+        // var_dump($zap);
+        // echo '</pre>';
         return true;
     }
 
@@ -16,8 +22,18 @@ class UserPanelController{
      	require_once (ROOT . '/models/user.php');
      	$zap = User::getList();
         echo 'Юзерская  панель/history';
-        echo "<pre>";
-        print_r($zap);
+        // echo "<pre>";
+        // print_r($zap);
+        require_once (ROOT . '/views/upanelstory.php');
+        // Определяем статус
+       // foreach ($zap as $key => $value) {
+       // 	if ($value['status'] == '1') {
+       // 		echo $value['id'];
+       // 		echo $value['tema '];
+       // 		echo $value['specialist '];
+       // 		echo $value['status'];
+       // 	}
+       // }
   		return true;
     }
     // Позволяет создать новую заявку 

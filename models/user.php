@@ -28,4 +28,26 @@ class User
 		}
 			return $zapiskiList;
 	}
+
+	public static function getLast(){
+		$db = Db::getConnection();
+		$zapiskiList = array();
+
+		$result = $db->query("SELECT * FROM `zapiski` ORDER BY `zapiski`.`data_sozdania` DESC LIMIT 5");
+
+		$i=0;
+		while ($row = $result->fetch()) {
+
+			$zapiskiList[$i]['id'] = $row['id'];
+			$zapiskiList[$i]['tema '] = $row['tema'];
+			$zapiskiList[$i]['text '] = $row['text'];
+			$zapiskiList[$i]['status'] = $row['status'];
+			$zapiskiList[$i]['data_sozdania'] = $row['data_sozdania'];
+			$zapiskiList[$i]['data_end'] = $row['data_end'];
+			$zapiskiList[$i]['id_otprav '] = $row['id_otprav'];
+			$zapiskiList[$i]['specialist '] = $row['specialist'];
+			$i++;
+		}
+			return $zapiskiList;
+	}
 }

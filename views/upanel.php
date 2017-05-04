@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html >
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
@@ -13,46 +13,42 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 </head>
 <body>
-<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class="navbar-brand" href="/upanel">Главная</a>
-  <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="navbar-nav">
-      <li class="nav-item ">
-          <div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Заявки
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="/upanel/story">История заявок</a>
-    <a class="dropdown-item" href="/upanel/create">Создать заявку</a>
-  </div>
+<?php require_once (ROOT . '/views/uheader.php'); ?>
+  
+  <div class="row">
+<div class="container col-lg-6">
+<h3 class="text-center">текст инструкция</h3>
+<p class="text-center"> тут вы можете просмотреть историю своих заявок , оставить свою завку по этой ссылке или просмотреть нашу базу знаний по этой ссылке, возможно там вы сможете найти ответ на свою проблему.</p>
 </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/upanel/knowledge">База знаний</a>
-      </li>
-      <li class="nav-item ">
-        <a class="nav-link" href="#">Pricing</a>
-      </li>
-      
-       <li class="nav-item  " >
-    
-      </li>
-    </ul>
-  </div>
-       <div class="dropdown ">
-  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Пользователь П.П.
-  </button>
-  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="/upanel/profile">Профиль</a>
-    <a class="dropdown-item" href="/upanel/exit">Выйти</a>
-  </div>
-</div>
-</nav>
 
+
+
+  <div class="container col-lg-6">
+    <h3 class="text-center">Последние 5 записок</h3>
+  <hr>
+    <table class="table">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Username</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach ($last as $key => $value): ?>
+        
+    <tr>
+      <th scope="row"><?php echo $value['status']; ?></th>
+      <td><?php echo $value['id']; ?></td>
+      <td><?php echo $value['tema '];?></td>
+      <td><?php echo $value['specialist ']; ?></td>
+    </tr>
+       <?php endforeach; ?>
+  </tbody>
+</table>
+  </div>
+ 
+</div>
 </body>
 </html>
