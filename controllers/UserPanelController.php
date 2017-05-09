@@ -39,6 +39,7 @@ class UserPanelController{
     // Позволяет создать новую заявку 
     public function actionCreate(){
         echo 'Юзерская  панель/create';
+        require_once (ROOT . '/views/upanelcreate.php');
         return true;
     }
     //  Переход в Базу знаний
