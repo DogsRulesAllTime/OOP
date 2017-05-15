@@ -34,7 +34,6 @@
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="/upanel/profile">Профиль</a>
-    <a class="dropdown-item" href="/upanel/exit">Выйти</a>
-  </div>
+      <form action="components/exit.php"><input type="submit"  class="dropdown-item" value="Выйти" ></form>
 </div>
 </nav>

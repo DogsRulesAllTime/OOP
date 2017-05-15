@@ -14,6 +14,7 @@ return array(
     
   
     'login' =>  'login/index',
+    'index.php' =>  'index/view',
       'index' =>  'index/view',
         '^$' =>  'index/view',
     

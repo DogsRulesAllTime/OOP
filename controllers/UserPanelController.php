@@ -38,7 +38,10 @@ class UserPanelController{
     }
     // Позволяет создать новую заявку 
     public function actionCreate(){
+        require_once (ROOT . '/models/user.php');
+        User::zapiskaAdd();
         echo 'Юзерская  панель/create';
+
         require_once (ROOT . '/views/upanelcreate.php');
         return true;
     }

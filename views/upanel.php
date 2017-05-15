@@ -14,41 +14,56 @@
 </head>
 <body>
 <?php require_once (ROOT . '/views/uheader.php'); ?>
-  
+  <br>
   <div class="row">
 <div class="container col-lg-6">
-<h3 class="text-center">текст инструкция</h3>
-<p class="text-center"> тут вы можете просмотреть <a href="/upanel/story">историю своих заявок</a> , по этой ссылке <a href="/upanel/create">создать новую заявку</a>  или просмотреть нашу <a href="/upanel/knowledge">базу знаний здесь</a>, возможно там вы сможете найти ответ на свою проблему.</p>
+<div class="card" style="width: 50rem;">
+  <div class="card-block ">
+    <h4 class="card-title text-center">текст инструкция</h4>
+    <p class="card-text">тут вы можете просмотреть <a href="/upanel/story">историю своих заявок</a> , по этой ссылке <a href="/upanel/create">создать новую заявку</a>  или просмотреть нашу <a href="/upanel/knowledge">базу знаний здесь</a>, возможно там вы сможете найти ответ на свою проблему.</p>
+    <a href="#" class="btn btn-primary ">Go somewhere</a>
+  </div>
+</div>
 </div>
 
 
 
-  <div class="container col-lg-6">
+  <div class="container col-lg-5">
     <h3 class="text-center">Последние 5 записок</h3>
   <hr>
     <table class="table">
     <thead>
     <tr>
       <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Username</th>
+      <th>Тема</th>
+      <th>Дата создания</th>
+      <th>Статус</th>
     </tr>
   </thead>
   <tbody>
     <?php foreach ($last as $key => $value): ?>
         
     <tr>
-      <th scope="row"><?php echo $value['status']; ?></th>
-      <td><?php echo $value['id']; ?></td>
-      <td><?php echo $value['tema '];?></td>
-      <td><?php echo $value['specialist ']; ?></td>
+      <th scope="row"><?php echo $value['id'];?></th>
+      <td><?php echo $value['tema'];?></td>
+      <td><?php echo date( "d-m-y" , strtotime($value['data_sozdania']));?></td>
+      <td><?php echo $value['status']; ?></td>
     </tr>
        <?php endforeach; ?>
   </tbody>
 </table>
   </div>
- 
+
 </div>
+<script>
+    $('#exit').click(function() {
+
+        $.ajax({
+            url: "components/exit.php",
+            data: exit()
+        })
+
+    });
+</script>
 </body>
 </html>

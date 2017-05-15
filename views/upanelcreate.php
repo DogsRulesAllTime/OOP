@@ -11,11 +11,17 @@
    <!--  <script src="template/js/bootstrap.js"></script> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+          <style>
+    #preview img {
+    width: 100px;
+      height: 100px;
+    }
+  </style>
 </head>
 <body>
 <?php require_once (ROOT . '/views/uheader.php'); ?>
 
-<form class="well form-horizontal" action="panel.php" method="post"  id="contact_form">
+<form enctype="multipart/form-data" class="well form-horizontal" action="" method="post"  id="contact_form">
 <fieldset>
 
 <!-- Form Name -->
@@ -29,23 +35,19 @@
   <label class="col-md-4 control-label">Тема</label>
     <div class="col-md-4 selectContainer">
     <div class="input-group">
-    <select name="state" class="form-control selectpicker" >
-      <option value=" " >Выберите тему</option>
-      <option>Установить ПО</option>
-      <option>Принтер/сканер</option>
-      <option>Графика</option>
-      <option>Плоттерная</option>
+    <select name="theme" class="form-control selectpicker" >
+      <option value="" >Выберите тему</option>
+      <option value="instal soft" >Установить ПО</option>
+      <option value="printers/scaners" >Принтер/сканер</option>
+      <option value="Grafic">Графика</option>
+      <option value="plotter">Плоттерная</option>
+      
       </select>
   </div>
 </div>
 </div>
-
-
-
-
 <!-- Text area -->
-  
-<div class="form-group">
+  <div class="form-group">
   <label class="col-md-4 control-label">Текст</label>
     <div class="col-md-4 inputGroupContainer">
     <div class="input-group">
@@ -57,19 +59,11 @@
 <div class="form-group">
                <!-- <input type="hidden" name="MAX_FILE_SIZE" value="3000000000000" /> -->
                <div class="input-group">
-                <input id="upload"  multiple="" name="myfile" type="file" ><br>
+                <input id="upload"  multiple="" name="myfile" type="file" >
                  </div>
                  <br>
                 <div id="preview" ></div>
-               
-<style>
-    #preview img {
-    width: 100px;
-      height: 100px;
-    }
-  </style>
-
-            </div>
+                </div>
 <!-- Button -->
 <div class="form-group">
   <label class="col-md-6 control-label"></label>
@@ -77,7 +71,6 @@
     <button type="submit" name="send" class="btn btn-warning" >Send <span class="glyphicon glyphicon-send"></span></button>
   </div>
 </div>
-
 </fieldset>
 </form>
 
